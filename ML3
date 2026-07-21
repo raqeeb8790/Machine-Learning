@@ -1,0 +1,20 @@
+data =[
+    ['sunny', 'warm', 'normal', 'strong', 'warm', 'same', 'yes'],
+    ['sunny', 'warm', 'high', 'strong', 'warm', 'same' , 'yes' ],
+    ['rainy', 'cold', 'high', 'strong', 'warm', 'change', 'no'],
+    ['sunny', 'warm', 'high', 'strong', 'cool', 'change', 'yes'],
+]
+hypothesis = [None]*(len(data[0])-1)
+print("initial hypothesis")
+print(hypothesis)
+for example in data:
+  if example[-1] == 'yes':
+    for i in range(len(hypothesis)):
+      if hypothesis[i] is None:
+        hypothesis[i] = example[i]
+      elif hypothesis[i] != example[i]:
+        hypothesis[i] = '?'
+    print("final hypothesis", example)
+    print(hypothesis)
+    print ("final Hypothesis")
+print(hypothesis)
