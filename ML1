@@ -1,0 +1,62 @@
+1: write a python program to compute central tendency measures: 
+mean, median, mode, measures of dispersion: variance. standard deviation
+
+
+# mean
+data = [10, 20, 20, 30, 40, 50]
+n = len(data)
+total = 0
+for i in data:
+  total += i
+mean = total / n
+
+data.sort()
+
+# median
+if n % 2 == 0:
+  median = (data[n // 2 - 1] + data[n // 2]) / 2
+else:
+  median = data[n // 2]
+
+# mode
+freq = {}
+for i in data:
+  if i in freq:
+    freq[i] += 1
+  else:
+    freq[i] = 1
+
+max_freq = 0
+for count in freq.values():
+  if count > max_freq:
+    max_freq = count
+# variance
+variance_sum = 0
+for i in data:
+  variance_sum += ((i - mean) ** 2)
+variance = variance_sum / n
+
+# standard deviation
+stdev = variance ** 0.5
+
+print("Mean:", mean)
+print("Median:", median)
+print("Mode(s):", modes)
+print("Variance:", variance)
+print("Standard Deviation:", stdev)
+
+
+
+import statistics
+data=[10,20,20,30,40,50]
+m=statistics.mean(data)
+med=statistics.median(data)
+mod=statistics.mode(data)
+var=statistics.variance(data)
+st_dev=statistics.stdev(data)
+print("MEAN:",m)
+print("Median:",med)
+print("Mode:",mod)
+print("Variance:",var)
+print("standard deviation:",st_dev)
+
